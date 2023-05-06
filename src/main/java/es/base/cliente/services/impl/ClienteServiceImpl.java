@@ -18,8 +18,7 @@ import java.util.stream.Collectors;
 public class ClienteServiceImpl implements IClienteService {
 
     @Inject
-    @Default
-    IClienteDAO clienteDAO;
+    ClienteDAO clienteDAO;
 
     @Inject
     ClienteMapper clienteMapper;
