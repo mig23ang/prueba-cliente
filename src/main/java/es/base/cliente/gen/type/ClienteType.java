@@ -2,9 +2,9 @@ package es.base.cliente.gen.type;
 
 import es.base.cliente.gen.type.TipoDocumentoEnum;
 import es.base.cliente.gen.type.TipoPersonaEnum;
-import java.time.LocalDate;
-import javax.validation.constraints.*;
-import javax.validation.Valid;
+import org.joda.time.LocalDate;
+import jakarta.validation.constraints.*;
+import jakarta.validation.Valid;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("ClienteType")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-06T10:45:28.910391700-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-06T16:13:26.818326700-05:00[America/Bogota]")
 public class ClienteType   {
   private @Valid Long id;
   private @Valid Integer numeroCliente;
