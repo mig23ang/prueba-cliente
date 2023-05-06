@@ -1,5 +1,6 @@
 package es.base.cliente.services.contract;
 
+import es.base.cliente.dao.contract.IClienteDAO;
 import es.base.cliente.dao.entity.ClienteEntity;
 import es.base.cliente.gen.type.ClienteType;
 

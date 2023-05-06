@@ -1,11 +1,13 @@
 package es.base.cliente.services.impl;
 
+import es.base.cliente.dao.contract.ClienteDAO;
 import es.base.cliente.dao.contract.IClienteDAO;
 import es.base.cliente.dao.entity.ClienteEntity;
 import es.base.cliente.gen.type.ClienteType;
 import es.base.cliente.services.contract.IClienteService;
 import es.base.cliente.utils.ClienteMapper;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Default;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
@@ -16,6 +18,7 @@ import java.util.stream.Collectors;
 public class ClienteServiceImpl implements IClienteService {
 
     @Inject
+    @Default
     IClienteDAO clienteDAO;
 
     @Inject
