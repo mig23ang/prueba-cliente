@@ -19,11 +19,6 @@ public class ClienteGraphqlController {
     @Inject
     ClienteMapper clienteMapper;
 
-    /**
-     * Endpoint para obtener todos los clientes CDT digital
-     *
-     * @return Lista de clientes CDT digital graphql
-     */
     @Query("getAllClientes")
     @Description("Obtiene todos los clientes CDT Digital")
     public List<ClienteType> getAllClientes() {
@@ -32,12 +27,6 @@ public class ClienteGraphqlController {
         return clienteTypeList;
     }
 
-    /**
-     * Endpoint para crear un cliente CDT digital
-     *
-     * @param clienteType Los datos del cliente CDT digital a crear
-     * @return El cliente CDT digital creado
-     */
     @Mutation("crearCliente")
     @Description("Crea un cliente CDT digital")
     public ClienteType crearCliente(@Name("clienteType") @Valid ClienteType clienteType) {
