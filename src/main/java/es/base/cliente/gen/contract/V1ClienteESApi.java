@@ -14,7 +14,7 @@ import jakarta.validation.constraints.*;
 import jakarta.validation.Valid;
 
 @Path("/v1/es/cliente")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-06T16:07:55.462810700-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-06T16:13:26.818326700-05:00[America/Bogota]")
 public interface V1ClienteESApi {
 
     @POST
