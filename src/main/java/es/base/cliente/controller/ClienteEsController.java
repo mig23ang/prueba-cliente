@@ -9,7 +9,7 @@ import jakarta.enterprise.inject.Default;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
-import javax.ws.rs.Path;
+import jakarta.ws.rs.Path;
 import java.util.List;
 
 
