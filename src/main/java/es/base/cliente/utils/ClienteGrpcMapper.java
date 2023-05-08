@@ -21,11 +21,11 @@ public class ClienteGrpcMapper {
                 .setFieldAccessLevel(Configuration.AccessLevel.PRIVATE)
                 .setMatchingStrategy(MatchingStrategies.STRICT);
 
-        this.modelMapper.typeMap(ClienteEntity.class, ClienteGrpcModel.class);
+        this.modelMapper.typeMap(ClienteType.class, ClienteGrpcModel.class);
     }
 
-    public ClienteGrpcModel toClienteGrpc(ClienteEntity clienteEntity) {
-        return modelMapper.map(clienteEntity, ClienteGrpcModel.class);
+    public ClienteGrpcModel toClienteGrpc(ClienteType clienteType) {
+        return modelMapper.map(clienteType, ClienteGrpcModel.class);
     }
 
     public ClienteEntity toClienteEntity(ClienteGrpcModel clienteGrpcModel) {

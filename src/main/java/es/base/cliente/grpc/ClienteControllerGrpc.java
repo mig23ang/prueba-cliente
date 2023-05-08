@@ -6,6 +6,7 @@ import es.base.cliente.Clientes;
 import es.base.cliente.ListaClientes;
 import es.base.cliente.dao.contract.ClienteDAO;
 import es.base.cliente.dao.entity.ClienteEntity;
+import es.base.cliente.gen.type.ClienteType;
 import es.base.cliente.services.impl.ClienteServiceImpl;
 import es.base.cliente.utils.ClienteGrpcMapper;
 import es.base.cliente.utils.ClienteMapper;
@@ -35,7 +36,7 @@ public class ClienteControllerGrpc extends ClienteGrpcServiceGrpc.ClienteGrpcSer
     @Override
     @Blocking
     public void consultarClientes(Clientes request, StreamObserver<ListaClientes> responseObserver) {
-        List<ClienteEntity> clientes = clienteDAO.listAll();
+        List<ClienteType> clientes = clienteService.obtenerClientes();
         List<ClienteGrpcModel> clientesGrpc = clientes.stream().map(clienteGrpcMapper::toClienteGrpc).collect(Collectors.toList());
         ListaClientes listaClientes = ListaClientes.newBuilder().addAllClientes(clientesGrpc).build();
         responseObserver.onNext(listaClientes);
