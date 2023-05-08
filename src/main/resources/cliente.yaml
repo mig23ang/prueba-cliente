@@ -84,7 +84,7 @@ components:
           type: integer
         fechaExpedicionDocumento:
           type: string
-          format: date
+          format: date-time
         primerNombre:
           type: string
         numeroCelular:

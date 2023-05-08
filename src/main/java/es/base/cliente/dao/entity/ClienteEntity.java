@@ -2,7 +2,7 @@ package es.base.cliente.dao.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "cliente_base")
@@ -14,7 +14,7 @@ public class ClienteEntity {
     private String tipoPersona;
     private String tipoDocumento;
     private Integer numeroDocumento;
-    private LocalDate fechaExpedicionDocumento;
+    private Date fechaExpedicionDocumento;
     private String primerNombre;
     private Integer numeroCelular;
     private String segundoNombre;
@@ -62,11 +62,11 @@ public class ClienteEntity {
         this.numeroDocumento = numeroDocumento;
     }
 
-    public LocalDate getFechaExpedicionDocumento() {
+    public Date getFechaExpedicionDocumento() {
         return fechaExpedicionDocumento;
     }
 
-    public void setFechaExpedicionDocumento(LocalDate fechaExpedicionDocumento) {
+    public void setFechaExpedicionDocumento(Date fechaExpedicionDocumento) {
         this.fechaExpedicionDocumento = fechaExpedicionDocumento;
     }
 
@@ -118,7 +118,7 @@ public class ClienteEntity {
         this.correoElectronico = correoElectronico;
     }
 
-    public ClienteEntity(Long id, Integer numeroCliente, String tipoPersona, String tipoDocumento, Integer numeroDocumento, LocalDate fechaExpedicionDocumento, String primerNombre, Integer numeroCelular, String segundoNombre, String primerApellido, String segundoApellido, String correoElectronico) {
+    public ClienteEntity(Long id, Integer numeroCliente, String tipoPersona, String tipoDocumento, Integer numeroDocumento, Date fechaExpedicionDocumento, String primerNombre, Integer numeroCelular, String segundoNombre, String primerApellido, String segundoApellido, String correoElectronico) {
         this.id = id;
         this.numeroCliente = numeroCliente;
         this.tipoPersona = tipoPersona;

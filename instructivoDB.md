@@ -33,7 +33,7 @@ quarkus.datasource.password=secret
 
 quarkus.datasource.jdbc.url=jdbc:mysql://localhost:3306/prueba_servicio_entidad
 
-quarkus.hibernate-orm.dialect=org.hibernate.dialect.MySQL8Dialect
+quarkus.hibernate-orm.dialect=org.hibernate.dialect.MySQLDialect
 
 quarkus.hibernate-orm.database.generation=update
 

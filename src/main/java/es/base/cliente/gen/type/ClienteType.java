@@ -2,7 +2,7 @@ package es.base.cliente.gen.type;
 
 import es.base.cliente.gen.type.TipoDocumentoEnum;
 import es.base.cliente.gen.type.TipoPersonaEnum;
-import org.joda.time.LocalDate;
+import java.util.Date;
 import jakarta.validation.constraints.*;
 import jakarta.validation.Valid;
 
@@ -15,14 +15,14 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 
 @JsonTypeName("ClienteType")
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-06T16:13:26.818326700-05:00[America/Bogota]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen", date = "2023-05-08T10:25:46.717824800-05:00[America/Bogota]")
 public class ClienteType   {
   private @Valid Long id;
   private @Valid Integer numeroCliente;
   private @Valid TipoPersonaEnum tipoPersona;
   private @Valid TipoDocumentoEnum tipoDocumento;
   private @Valid Integer numeroDocumento;
-  private @Valid LocalDate fechaExpedicionDocumento;
+  private @Valid Date fechaExpedicionDocumento;
   private @Valid String primerNombre;
   private @Valid Integer numeroCelular;
   private @Valid String segundoNombre;
@@ -122,19 +122,19 @@ public class ClienteType   {
 
   /**
    **/
-  public ClienteType fechaExpedicionDocumento(LocalDate fechaExpedicionDocumento) {
+  public ClienteType fechaExpedicionDocumento(Date fechaExpedicionDocumento) {
     this.fechaExpedicionDocumento = fechaExpedicionDocumento;
     return this;
   }
 
   
   @JsonProperty("fechaExpedicionDocumento")
-  public LocalDate getFechaExpedicionDocumento() {
+  public Date getFechaExpedicionDocumento() {
     return fechaExpedicionDocumento;
   }
 
   @JsonProperty("fechaExpedicionDocumento")
-  public void setFechaExpedicionDocumento(LocalDate fechaExpedicionDocumento) {
+  public void setFechaExpedicionDocumento(Date fechaExpedicionDocumento) {
     this.fechaExpedicionDocumento = fechaExpedicionDocumento;
   }
 

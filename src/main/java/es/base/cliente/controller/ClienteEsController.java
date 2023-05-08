@@ -5,17 +5,13 @@ import es.base.cliente.gen.contract.V1ClienteESApi;
 import es.base.cliente.gen.type.ClienteType;
 import es.base.cliente.services.impl.ClienteServiceImpl;
 import es.base.cliente.utils.ClienteMapper;
-import jakarta.enterprise.inject.Default;
 import jakarta.inject.Inject;
-import jakarta.transaction.Transactional;
 
-import jakarta.ws.rs.Path;
 import java.util.List;
 
 
 public class ClienteEsController implements V1ClienteESApi {
 
-    @Default
     @Inject
     ClienteServiceImpl clienteService;
 
