@@ -1,12 +1,12 @@
 package es.base.cliente.utils;
 
 import es.base.cliente.ClienteGrpcModel;
+import es.base.cliente.dao.entity.ClienteEntity;
 import es.base.cliente.gen.type.ClienteType;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.modelmapper.ModelMapper;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.modelmapper.config.Configuration;
+import org.modelmapper.convention.MatchingStrategies;
 
 @ApplicationScoped
 public class ClienteGrpcMapper {
@@ -15,19 +15,21 @@ public class ClienteGrpcMapper {
 
     public ClienteGrpcMapper() {
         this.modelMapper = new ModelMapper();
+
+        this.modelMapper.getConfiguration()
+                .setFieldMatchingEnabled(true)
+                .setFieldAccessLevel(Configuration.AccessLevel.PRIVATE)
+                .setMatchingStrategy(MatchingStrategies.STRICT);
+
+        this.modelMapper.typeMap(ClienteEntity.class, ClienteGrpcModel.class);
     }
 
-    public ClienteGrpcModel toClienteGrpc(ClienteType clienteType) {
-        return modelMapper.map(clienteType, ClienteGrpcModel.class);
+    public ClienteGrpcModel toClienteGrpc(ClienteEntity clienteEntity) {
+        return modelMapper.map(clienteEntity, ClienteGrpcModel.class);
     }
 
-    public List<ClienteGrpcModel> toClienteGrpcList(List<ClienteType> clienteTypeList) {
-        List<ClienteGrpcModel> clienteGrpcList = new ArrayList<>();
-        for (ClienteType clienteType : clienteTypeList) {
-            ClienteGrpcModel clienteGrpc = toClienteGrpc(clienteType);
-            clienteGrpcList.add(clienteGrpc);
-        }
-        return clienteGrpcList;
+    public ClienteEntity toClienteEntity(ClienteGrpcModel clienteGrpcModel) {
+        return modelMapper.map(clienteGrpcModel, ClienteEntity.class);
     }
 
 }
