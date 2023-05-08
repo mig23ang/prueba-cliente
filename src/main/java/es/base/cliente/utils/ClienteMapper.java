@@ -32,4 +32,5 @@ public class ClienteMapper {
     public ClienteType toClienteType(ClienteEntity clienteEntity) {
         return modelMapper.map(clienteEntity, ClienteType.class);
     }
+
 }
