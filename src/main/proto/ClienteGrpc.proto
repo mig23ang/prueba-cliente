@@ -5,18 +5,14 @@ option java_package = "es.base.cliente";
 option java_outer_classname = "ClienteProto";
 import "google/protobuf/timestamp.proto";
 
-
-
 service ClienteGrpcService {
-  rpc consultarClientes (Clientes) returns (ClienteGrpcModel) {}
+  rpc consultarClientes (Clientes) returns (ListaClientes) {}
 }
-
 
 message Clientes {
 
 }
 
-// Modelo Cliente.
 message ClienteGrpcModel {
   int64 id = 1;
   int32 numeroCliente = 2;
@@ -31,7 +27,6 @@ message ClienteGrpcModel {
   string segundoApellido = 11;
   string correoElectronico = 12;
 }
-
 
 message ListaClientes {
   repeated ClienteGrpcModel clientes = 1;

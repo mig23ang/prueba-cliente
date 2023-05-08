@@ -11,20 +11,23 @@ import java.util.List;
 @ApplicationScoped
 public class ClienteGrpcMapper {
 
-    public ClienteGrpcModel clienteTypeToGrpc(ClienteType clienteType) {
-        ModelMapper modelMapper = new ModelMapper();
-        ClienteGrpcModel clienteGrpcModel = modelMapper.map(clienteType, ClienteGrpcModel.class);
-        return clienteGrpcModel;
+    private final ModelMapper modelMapper;
+
+    public ClienteGrpcMapper() {
+        this.modelMapper = new ModelMapper();
     }
 
-    public List<ClienteGrpcModel> clienteTypeListToGrpc(List<ClienteType> clienteTypeList) {
+    public ClienteGrpcModel toClienteGrpc(ClienteType clienteType) {
+        return modelMapper.map(clienteType, ClienteGrpcModel.class);
+    }
+
+    public List<ClienteGrpcModel> toClienteGrpcList(List<ClienteType> clienteTypeList) {
         List<ClienteGrpcModel> clienteGrpcList = new ArrayList<>();
         for (ClienteType clienteType : clienteTypeList) {
-            ClienteGrpcModel clienteGrpc = clienteTypeToGrpc(clienteType);
+            ClienteGrpcModel clienteGrpc = toClienteGrpc(clienteType);
             clienteGrpcList.add(clienteGrpc);
         }
         return clienteGrpcList;
     }
-
 
 }
